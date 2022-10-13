@@ -14,6 +14,16 @@ function App() {
   const [playerDataChamp3, setPlayerDataChamp3] = useState({});
   const [playerDataChamp4, setPlayerDataChamp4] = useState({});
   const [playerDataChamp5, setPlayerDataChamp5] = useState({});
+  const [playerDataChamp6, setPlayerDataChamp6] = useState({});
+  const [playerDataChamp7, setPlayerDataChamp7] = useState({});
+  const [playerDataChamp8, setPlayerDataChamp8] = useState({});
+  const [playerDataChamp9, setPlayerDataChamp9] = useState({});
+  const [playerDataChamp10, setPlayerDataChamp10] = useState({});
+  const [playerDataChamp11, setPlayerDataChamp11] = useState({});
+  const [playerDataChamp12, setPlayerDataChamp12] = useState({});
+  const [playerDataChamp13, setPlayerDataChamp13] = useState({});
+  const [playerDataChamp14, setPlayerDataChamp14] = useState({});
+  const [playerDataChamp15, setPlayerDataChamp15] = useState({});
   const [playerDataMatch1, setPlayerDataMatch1] = useState({});
   const [playerDataMatchid, setPlayerDataMatchid] = useState({});
   const [g1p1, setg1p1] = useState({});
@@ -100,6 +110,16 @@ function App() {
       setPlayerDataChamp3(r3.data[2]);
       setPlayerDataChamp4(r3.data[3]);
       setPlayerDataChamp5(r3.data[4]);
+      setPlayerDataChamp6(r3.data[5]);
+      setPlayerDataChamp7(r3.data[6]);
+      setPlayerDataChamp8(r3.data[7]);
+      setPlayerDataChamp9(r3.data[8]);
+      setPlayerDataChamp10(r3.data[9]);
+      setPlayerDataChamp11(r3.data[10]);
+      setPlayerDataChamp12(r3.data[11]);
+      setPlayerDataChamp13(r3.data[12]);
+      setPlayerDataChamp14(r3.data[13]);
+      setPlayerDataChamp15(r3.data[14]);
       console.log(r3.data[0]);
 
     }).catch(function (error){
@@ -129,9 +149,9 @@ function App() {
 
     var APICallStringMatchid1 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[0]+"?api_key="+ API_KEYS;
     var APICallStringMatchid2 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[1]+"?api_key="+ API_KEYS;
-    var APICallStringMatchid3 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[2]+"?api_key="+ API_KEYS;
-    var APICallStringMatchid4 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[3]+"?api_key="+ API_KEYS;
-    var APICallStringMatchid5 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[4]+"?api_key="+ API_KEYS;
+    //var APICallStringMatchid3 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[2]+"?api_key="+ API_KEYS;
+    //var APICallStringMatchid4 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[3]+"?api_key="+ API_KEYS;
+    //var APICallStringMatchid5 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[4]+"?api_key="+ API_KEYS;
 
     axios.get(APICallStringMatchid1).then(function (r5){
       //success
@@ -154,32 +174,32 @@ function App() {
       console.log(error);
     });
 
-    axios.get(APICallStringMatchid3).then(function (r5){
-      //success
-      searchForPlayerfrompuuid(event,r5.data.metadata.participants,3)
-
-    }).catch(function (error){
-      //Error
-      console.log(error);
-    });
-
-    axios.get(APICallStringMatchid4).then(function (r5){
-      //success
-      searchForPlayerfrompuuid(event,r5.data.metadata.participants,4)
-
-    }).catch(function (error){
-      //Error
-      console.log(error);
-    });
-
-    axios.get(APICallStringMatchid5).then(function (r5){
-      //success
-      searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
-
-    }).catch(function (error){
-      //Error
-      console.log(error);
-    });
+    // axios.get(APICallStringMatchid3).then(function (r5){
+    //   //success
+    //   searchForPlayerfrompuuid(event,r5.data.metadata.participants,3)
+    //
+    // }).catch(function (error){
+    //   //Error
+    //   console.log(error);
+    // });
+    //
+    // axios.get(APICallStringMatchid4).then(function (r5){
+    //   //success
+    //   searchForPlayerfrompuuid(event,r5.data.metadata.participants,4)
+    //
+    // }).catch(function (error){
+    //   //Error
+    //   console.log(error);
+    // });
+    //
+    // axios.get(APICallStringMatchid5).then(function (r5){
+    //   //success
+    //   searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
+    //
+    // }).catch(function (error){
+    //   //Error
+    //   console.log(error);
+    // });
 
 
   }
@@ -198,481 +218,613 @@ function App() {
 
     if (game==1){
 
-      axios.get(g1p1).then(function (r6){
-        //success
-        setg1p1(r6.data);
-        console.log(r6.data);
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p2).then(function (r7){
-        //success
-        setg1p2(r7.data);
-        console.log(r7.data);
+      axios.all([
+        axios.get(g1p1),
+        axios.get(g1p2),
+        axios.get(g1p3),
+        axios.get(g1p4),
+        axios.get(g1p5),
+        axios.get(g1p6),
+        axios.get(g1p7),
+        axios.get(g1p8),
+        axios.get(g1p9),
+        axios.get(g1p10)
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p3).then(function (r8){
-        //success
-        setg1p3(r8.data);
-        console.log(r8.data);
+      ]).then( r6 =>{
+        setg1p1(r6[0].data);
+        setg1p2(r6[1].data);
+        setg1p3(r6[2].data);
+        setg1p4(r6[3].data);
+        setg1p5(r6[4].data);
+        setg1p6(r6[5].data);
+        setg1p7(r6[6].data);
+        setg1p8(r6[7].data);
+        setg1p9(r6[8].data);
+        setg1p10(r6[9].data);
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
       });
-      axios.get(g1p4).then(function (r6){
-        //success
-        setg1p4(r6.data);
-        console.log(r6.data);
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p5).then(function (r6){
-        //success
-        setg1p5(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p6).then(function (r6){
-        //success
-        setg1p6(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p7).then(function (r6){
-        //success
-        setg1p7(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p8).then(function (r6){
-        //success
-        setg1p8(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p9).then(function (r6){
-        //success
-        setg1p9(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p10).then(function (r6){
-        //success
-        setg1p10(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
+      // axios.get(g1p1).then(r6=>{
+      //   //success
+      //   setg1p1(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p2).then(function (r7){
+      //   //success
+      //   setg1p2(r7.data);
+      //   console.log(r7.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p3).then(function (r8){
+      //   //success
+      //   setg1p3(r8.data);
+      //   console.log(r8.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p4).then(function (r6){
+      //   //success
+      //   setg1p4(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p5).then(function (r6){
+      //   //success
+      //   setg1p5(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p6).then(function (r6){
+      //   //success
+      //   setg1p6(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p7).then(function (r6){
+      //   //success
+      //   setg1p7(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p8).then(function (r6){
+      //   //success
+      //   setg1p8(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p9).then(function (r6){
+      //   //success
+      //   setg1p9(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p10).then(function (r6){
+      //   //success
+      //   setg1p10(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
 
 
     }
 
-    if (game==2){
+    else if (game==2){
 
-      axios.get(g1p1).then(function (r6){
-        //success
-        setg2p1(r6.data);
-        console.log(r6.data);
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
+      axios.all([
+        axios.get(g1p1),
+        axios.get(g1p2),
+        axios.get(g1p3),
+        axios.get(g1p4),
+        axios.get(g1p5),
+        axios.get(g1p6),
+        axios.get(g1p7),
+        axios.get(g1p8),
+        axios.get(g1p9),
+        axios.get(g1p10)
+
+      ]).then( r6 =>{
+        setg2p1(r6[0].data);
+        setg2p2(r6[1].data);
+        setg2p3(r6[2].data);
+        setg2p4(r6[3].data);
+        setg2p5(r6[4].data);
+        setg2p6(r6[5].data);
+        setg2p7(r6[6].data);
+        setg2p8(r6[7].data);
+        setg2p9(r6[8].data);
+        setg2p10(r6[9].data);
+
       });
-      axios.get(g1p2).then(function (r7){
-        //success
-        setg2p2(r7.data);
-        console.log(r7.data);
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p3).then(function (r8){
-        //success
-        setg2p3(r8.data);
-        console.log(r8.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p4).then(function (r6){
-        //success
-        setg2p4(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p5).then(function (r6){
-        //success
-        setg2p5(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p6).then(function (r6){
-        //success
-        setg2p6(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p7).then(function (r6){
-        //success
-        setg2p7(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p8).then(function (r6){
-        //success
-        setg2p8(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p9).then(function (r6){
-        //success
-        setg2p9(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p10).then(function (r6){
-        //success
-        setg2p10(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
+      // axios.get(g1p1).then(function (r6){
+      //   //success
+      //   setg2p1(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p2).then(function (r7){
+      //   //success
+      //   setg2p2(r7.data);
+      //   console.log(r7.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p3).then(function (r8){
+      //   //success
+      //   setg2p3(r8.data);
+      //   console.log(r8.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p4).then(function (r6){
+      //   //success
+      //   setg2p4(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p5).then(function (r6){
+      //   //success
+      //   setg2p5(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p6).then(function (r6){
+      //   //success
+      //   setg2p6(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p7).then(function (r6){
+      //   //success
+      //   setg2p7(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p8).then(function (r6){
+      //   //success
+      //   setg2p8(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p9).then(function (r6){
+      //   //success
+      //   setg2p9(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p10).then(function (r6){
+      //   //success
+      //   setg2p10(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
 
 
     }
 
 
-    if (game==3){
+    else if (game==3){
 
-      axios.get(g1p1).then(function (r6){
-        //success
-        setg3p1(r6.data);
-        console.log(r6.data);
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
+      axios.all([
+        axios.get(g1p1),
+        axios.get(g1p2),
+        axios.get(g1p3),
+        axios.get(g1p4),
+        axios.get(g1p5),
+        axios.get(g1p6),
+        axios.get(g1p7),
+        axios.get(g1p8),
+        axios.get(g1p9),
+        axios.get(g1p10)
+
+      ]).then( r6 =>{
+        setg3p1(r6[0].data);
+        setg3p2(r6[1].data);
+        setg3p3(r6[2].data);
+        setg3p4(r6[3].data);
+        setg3p5(r6[4].data);
+        setg3p6(r6[5].data);
+        setg3p7(r6[6].data);
+        setg3p8(r6[7].data);
+        setg3p9(r6[8].data);
+        setg3p10(r6[9].data);
+
       });
-      axios.get(g1p2).then(function (r7){
-        //success
-        setg3p2(r7.data);
-        console.log(r7.data);
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p3).then(function (r8){
-        //success
-        setg3p3(r8.data);
-        console.log(r8.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p4).then(function (r6){
-        //success
-        setg3p4(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p5).then(function (r6){
-        //success
-        setg3p5(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p6).then(function (r6){
-        //success
-        setg3p6(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p7).then(function (r6){
-        //success
-        setg3p7(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p8).then(function (r6){
-        //success
-        setg3p8(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p9).then(function (r6){
-        //success
-        setg3p9(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p10).then(function (r6){
-        //success
-        setg3p10(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
+      // axios.get(g1p1).then(function (r6){
+      //   //success
+      //   setg3p1(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p2).then(function (r7){
+      //   //success
+      //   setg3p2(r7.data);
+      //   console.log(r7.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p3).then(function (r8){
+      //   //success
+      //   setg3p3(r8.data);
+      //   console.log(r8.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p4).then(function (r6){
+      //   //success
+      //   setg3p4(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p5).then(function (r6){
+      //   //success
+      //   setg3p5(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p6).then(function (r6){
+      //   //success
+      //   setg3p6(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p7).then(function (r6){
+      //   //success
+      //   setg3p7(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p8).then(function (r6){
+      //   //success
+      //   setg3p8(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p9).then(function (r6){
+      //   //success
+      //   setg3p9(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p10).then(function (r6){
+      //   //success
+      //   setg3p10(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
 
 
     }
 
-    if (game==4){
+    else if (game==4){
 
-      axios.get(g1p1).then(function (r6){
-        //success
-        setg4p1(r6.data);
-        console.log(r6.data);
+      axios.all([
+        axios.get(g1p1),
+        axios.get(g1p2),
+        axios.get(g1p3),
+        axios.get(g1p4),
+        axios.get(g1p5),
+        axios.get(g1p6),
+        axios.get(g1p7),
+        axios.get(g1p8),
+        axios.get(g1p9),
+        axios.get(g1p10)
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
+      ]).then( r6 =>{
+        setg4p1(r6[0].data);
+        setg4p2(r6[1].data);
+        setg4p3(r6[2].data);
+        setg4p4(r6[3].data);
+        setg4p5(r6[4].data);
+        setg4p6(r6[5].data);
+        setg4p7(r6[6].data);
+        setg4p8(r6[7].data);
+        setg4p9(r6[8].data);
+        setg4p10(r6[9].data);
+
       });
-      axios.get(g1p2).then(function (r7){
-        //success
-        setg4p2(r7.data);
-        console.log(r7.data);
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p3).then(function (r8){
-        //success
-        setg4p3(r8.data);
-        console.log(r8.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p4).then(function (r6){
-        //success
-        setg4p4(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p5).then(function (r6){
-        //success
-        setg4p5(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p6).then(function (r6){
-        //success
-        setg4p6(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p7).then(function (r6){
-        //success
-        setg4p7(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p8).then(function (r6){
-        //success
-        setg4p8(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p9).then(function (r6){
-        //success
-        setg4p9(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p10).then(function (r6){
-        //success
-        setg4p10(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
+      // axios.get(g1p1).then(function (r6){
+      //   //success
+      //   setg4p1(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p2).then(function (r7){
+      //   //success
+      //   setg4p2(r7.data);
+      //   console.log(r7.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p3).then(function (r8){
+      //   //success
+      //   setg4p3(r8.data);
+      //   console.log(r8.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p4).then(function (r6){
+      //   //success
+      //   setg4p4(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p5).then(function (r6){
+      //   //success
+      //   setg4p5(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p6).then(function (r6){
+      //   //success
+      //   setg4p6(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p7).then(function (r6){
+      //   //success
+      //   setg4p7(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p8).then(function (r6){
+      //   //success
+      //   setg4p8(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p9).then(function (r6){
+      //   //success
+      //   setg4p9(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p10).then(function (r6){
+      //   //success
+      //   setg4p10(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
 
 
     }
+    else if (game==5){
 
-    if (game==5){
+      axios.all([
+        axios.get(g1p1),
+        axios.get(g1p2),
+        axios.get(g1p3),
+        axios.get(g1p4),
+        axios.get(g1p5),
+        axios.get(g1p6),
+        axios.get(g1p7),
+        axios.get(g1p8),
+        axios.get(g1p9),
+        axios.get(g1p10)
 
-      axios.get(g1p1).then(function (r6){
-        //success
-        setg5p1(r6.data);
-        console.log(r6.data);
+      ]).then( r6 =>{
+        setg5p1(r6[0].data);
+        setg5p2(r6[1].data);
+        setg5p3(r6[2].data);
+        setg5p4(r6[3].data);
+        setg5p5(r6[4].data);
+        setg5p6(r6[5].data);
+        setg5p7(r6[6].data);
+        setg5p8(r6[7].data);
+        setg5p9(r6[8].data);
+        setg5p10(r6[9].data);
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
       });
-      axios.get(g1p2).then(function (r7){
-        //success
-        setg5p2(r7.data);
-        console.log(r7.data);
 
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p3).then(function (r8){
-        //success
-        setg5p3(r8.data);
-        console.log(r8.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p4).then(function (r6){
-        //success
-        setg5p4(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p5).then(function (r6){
-        //success
-        setg5p5(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p6).then(function (r6){
-        //success
-        setg5p6(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p7).then(function (r6){
-        //success
-        setg5p7(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p8).then(function (r6){
-        //success
-        setg5p8(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p9).then(function (r6){
-        //success
-        setg5p9(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
-      axios.get(g1p10).then(function (r6){
-        //success
-        setg5p10(r6.data);
-        console.log(r6.data);
-
-      }).catch(function (error){
-        //Error
-        console.log(error);
-      });
+      // axios.get(g1p1).then( rs6=>{
+      //   //success
+      //   setg5p1(rs6.data);
+      //   console.log(rs6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p2).then(function (r7){
+      //   //success
+      //   setg5p2(r7.data);
+      //   console.log(r7.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p3).then(function (r8){
+      //   //success
+      //   setg5p3(r8.data);
+      //   console.log(r8.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p4).then(function (r6){
+      //   //success
+      //   setg5p4(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p5).then(function (r6){
+      //   //success
+      //   setg5p5(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p6).then(function (r6){
+      //   //success
+      //   setg5p6(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p7).then(function (r6){
+      //   //success
+      //   setg5p7(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p8).then(function (r6){
+      //   //success
+      //   setg5p8(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p9).then(function (r6){
+      //   //success
+      //   setg5p9(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
+      // axios.get(g1p10).then(function (r6){
+      //   //success
+      //   setg5p10(r6.data);
+      //   console.log(r6.data);
+      //
+      // }).catch(function (error){
+      //   //Error
+      //   console.log(error);
+      // });
 
     }
 
@@ -708,7 +860,9 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h5>helllo </h5>
+        <h5>dd </h5>
+
+
         <input type="text" onChange={e => setSearchText(e.target.value)} ></input>
         <button onClick={e => searchForPlayer(e)}> search for player </button>
       </div>
@@ -716,21 +870,18 @@ function App() {
         <>
           <div className="content flex text-left">
             <img className=" h-48 w-48" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/profileicon/"+playerData.profileIconId+".png"}></img>
-
             <p className="text-blue-800">{playerData.name}</p>
 
 
 
           </div>
           <div>
-          <p className="bg-blue-800">{playerData.id}</p>
-            <p>{playerData.puuid}</p>
-            <p>{playerDataMatch1[2]}</p>
+            <p className="bg-blue-800">{playerData.name}</p>
+
 
             <p>{playerDataR.tier} {playerDataR.rank}</p>
-            <p>:{playerDataMatchid.participants}</p>
-            <p>{playerDataR.leaguePoints}lp</p>
 
+            <p>{playerDataR.leaguePoints}lp</p>
 
             <p>{playerDataR.wins}wins</p>
             <p>{playerDataR.losses}losses</p>
@@ -739,6 +890,22 @@ function App() {
 
 
           </div>
+          <div >
+          <div className="content flex text-left">
+            <img className=" h-48 w-48" src={"https://static.u.gg/assets/lol/s12_rank_icons/"+playerDataR.tier.toLowerCase()+".png"}></img>
+
+            <div>
+              <p>{playerDataR.tier} {playerDataR.rank}</p>
+              <p>{playerDataR.leaguePoints}lp</p>
+            </div>
+            <div >
+              <p>{playerDataR.wins}W {playerDataR.losses}L</p>
+              <p>{(playerDataR.wins/(playerDataR.wins+playerDataR.losses)).toFixed(2)*100}% Win Rate</p>
+            </div>
+          </div>
+
+          </div>
+
           <div class="float-container">
             <div class="float-child">
               <div className="content flex">
@@ -766,17 +933,93 @@ function App() {
                 <p>{playerDataChamp5.championPoints}  </p>
                 <p>{champID_to_Champ(playerDataChamp5.championId)}</p>
               </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp6.championId)+".png"}></img>
+                <p>{playerDataChamp6.championPoints}  </p>
+                <p>{champID_to_Champ(playerDataChamp6.championId)}</p>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp7.championId)+".png"}></img>
+                <p>{playerDataChamp7.championPoints}  </p>
+                <p>{champID_to_Champ(playerDataChamp7.championId)}</p>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp8.championId)+".png"}></img>
+                <p>{playerDataChamp8.championPoints}  </p>
+                <p>{champID_to_Champ(playerDataChamp8.championId)}</p>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp9.championId)+".png"}></img>
+                <p>{playerDataChamp9.championPoints}  </p>
+                <p>{champID_to_Champ(playerDataChamp9.championId)}</p>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp10.championId)+".png"}></img>
+                <p>{playerDataChamp10.championPoints}  </p>
+                <p>{champID_to_Champ(playerDataChamp10.championId)}</p>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp11.championId)+".png"}></img>
+                <p>{playerDataChamp11.championPoints}  </p>
+                <p>{champID_to_Champ(playerDataChamp11.championId)}</p>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp12.championId)+".png"}></img>
+                <p>{playerDataChamp12.championPoints}  </p>
+                <p>{champID_to_Champ(playerDataChamp12.championId)}</p>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp13.championId)+".png"}></img>
+                <p>{playerDataChamp13.championPoints}  </p>
+                <p>{champID_to_Champ(playerDataChamp13.championId)}</p>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp14.championId)+".png"}></img>
+                <p>{playerDataChamp14.championPoints}  </p>
+                <p>{champID_to_Champ(playerDataChamp14.championId)}</p>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp15.championId)+".png"}></img>
+                <p>{playerDataChamp15.championPoints}  </p>
+                <p>{champID_to_Champ(playerDataChamp15.championId)}</p>
+              </div>
+
             </div>
 
             <div class="float-child2" >
               <p>Match history</p>
 
-              <p>{g4p1.name}</p>
-              <p>{g4p2.name}</p>
-              <p>{g4p3.name}</p>
-              <p>{g4p4.name}</p>
-              <p>{g4p5.name}</p>
 
+              <div class="float-child3">
+                <p>{g1p1.name}</p>
+                <p>{g1p2.name}</p>
+                <p>{g1p3.name}</p>
+                <p>{g1p4.name}</p>
+                <p>{g1p5.name}</p>
+              </div>
+
+              <div class="float-child3">
+                <p>{g1p6.name}</p>
+                <p>{g1p7.name}</p>
+                <p>{g1p8.name}</p>
+                <p>{g1p9.name}</p>
+                <p>{g1p10.name}</p>
+              </div>
+              <div class="float-child3">
+                <p>{g2p1.name}</p>
+                <p>{g2p2.name}</p>
+                <p>{g2p3.name}</p>
+                <p>{g2p4.name}</p>
+                <p>{g2p5.name}</p>
+              </div>
+
+              <div class="float-child3">
+                <p>{g2p6.name}</p>
+                <p>{g2p7.name}</p>
+                <p>{g2p8.name}</p>
+                <p>{g2p9.name}</p>
+                <p>{g2p10.name}</p>
+              </div>
 
 
 

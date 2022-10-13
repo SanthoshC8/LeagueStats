@@ -61,3 +61,17 @@
     float: left;
     border: 2px solid red;
 }
+
+
+.float-child5 {
+    width: 50%;
+    float: left;
+    border: 2px solid red;
+}
+
+.lp {
+  
+  float: left;
+  border: 2px solid red;
+  clear: both;
+}
