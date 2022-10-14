@@ -765,8 +765,8 @@ function App() {
 
 
   return (
-    <div className="App">
-      <div className="container">
+    <div className="App ">
+      <div class="bag" className="container">
         <h1>League Stats</h1>
 
 
@@ -776,17 +776,13 @@ function App() {
       </div>
       {JSON.stringify(playerData) != '{}' ?
         <>
+          <div class="bag2">
           <div className="content flex text-center">
             <img className=" h-48 w-48" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/profileicon/"+playerData.profileIconId+".png"}></img>
             <div class="profile">
-              <p className="text-blue-800">{playerData.name}</p>
+              <p className="text-white">{playerData.name}</p>
               <p>lvl {playerData.summonerLevel} </p>
-
-
             </div>
-
-
-
           </div>
 
           <div >
@@ -812,176 +808,176 @@ function App() {
             <div class="float-child">
               <p class="hm">Champions</p>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp.championId)+".png"}></img>
-                <div className=" w-15">
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp2.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp2.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp2.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp2.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp3.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp3.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp3.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp3.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp4.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp4.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp4.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp4.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp5.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp5.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp5.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp5.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp6.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp6.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp6.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp6.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp7.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp7.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp7.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp7.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp8.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp8.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp8.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp8.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp9.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp9.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp9.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp9.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp10.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp10.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp10.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp10.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp11.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp11.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp11.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp11.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp12.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp12.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp12.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp12.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp13.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp13.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp13.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp13.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp14.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp14.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp14.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp14.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp15.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp15.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp15.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp15.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp16.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp16.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp16.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp16.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp17.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp17.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp17.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp17.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp18.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp18.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp18.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp18.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp19.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp19.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp19.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp19.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp20.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp20.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp20.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp20.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp21.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp21.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp21.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp21.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp22.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp22.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp22.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp22.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp23.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp23.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp23.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp23.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp24.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp24.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp24.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp24.championPoints} pts  </p>
                 </div>
               </div>
               <div className="content flex">
-                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp25.championId)+".png"}></img>
-                <div>
+                <img className=" w-4/12" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp25.championId)+".png"}></img>
+                <div className=" w-8/12 " class="cdd">
                   <p class="champsd">{champID_to_Champ(playerDataChamp25.championId)}</p>
                   <p style={{color: "grey"}}>{playerDataChamp25.championPoints} pts  </p>
                 </div>
@@ -989,7 +985,7 @@ function App() {
             </div>
 
             <div class="float-child2" >
-              <p class="">Match history</p>
+              <p className="text-white">Match history</p>
 
               <div class={didwewin(playerData.name,g1)}>
                 <div class="t2">
@@ -1025,6 +1021,7 @@ function App() {
               </div>
 
               <div class={didwewin(playerData.name,g1)}>
+
                 <div class="t2">
                   <div class="t3">
                     <img class="champimage" src={playerchampsel(g1,5)}></img>
@@ -2318,7 +2315,7 @@ function App() {
 
             </div>
           </div>
-
+          </div>
 
         </>
         :
