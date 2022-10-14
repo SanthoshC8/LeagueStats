@@ -81,7 +81,54 @@ function App() {
   const [g5p9, setg5p9] = useState({});
   const [g5p10, setg5p10] = useState({});
 
-  const API_KEYS = "RGAPI-bd43b7c0-8f3e-4057-bb29-b30b306c9258"
+
+  const [g1, setg1] = useState({});
+  const [g2, setg2] = useState({});
+  const [g3, setg3] = useState({});
+  const [g4, setg4] = useState({});
+  const [g5, setg5] = useState({});
+  const [g6, setg6] = useState({});
+  const [g7, setg7] = useState({});
+  const [g8, setg8] = useState({});
+  const [g9, setg9] = useState({});
+  const [g10, setg10] = useState({});
+  const [g11, setg11] = useState({});
+  const [g12, setg12] = useState({});
+  const [g13, setg13] = useState({});
+  const [g14, setg14] = useState({});
+  const [g15, setg15] = useState({});
+
+
+
+
+
+  //var g1player1 = "HELOO";
+  //var g1player2 = "HELOO2";
+  //var g1player3 = "HELOO3";
+  //var g1player4 = "HELOO4";
+  //var g1player5 = "HELOO5";
+
+  function findplayer(idd,pn){
+    var player = "player";
+    try {
+      player = idd.info.participants[pn].summonerName;
+    }
+    catch(err) {
+    }
+    return player
+  }
+
+
+
+  function changeColor() {
+          var colorCode = document.getElementById('color').value;
+          var nav = document.getElementById('nav');
+
+          nav.style.background = colorCode;
+      }
+
+  const API_KEYS = "RGAPI-404eac0e-ff94-4fde-aa1f-6692d3711f72"
+
 
 
 
@@ -94,11 +141,14 @@ function App() {
       //success
 
       setPlayerDataR(r2.data[0]);
-      console.log(r2.data[0]);
+
+      //tier = r2.data[0].tier;
+      //console.log(r2.data[0].tier);
+      //console.log(r2.data[0])
 
     }).catch(function (error){
       //Error
-      console.log(error);
+      //console.log(error);
     });
 
 
@@ -120,11 +170,11 @@ function App() {
       setPlayerDataChamp13(r3.data[12]);
       setPlayerDataChamp14(r3.data[13]);
       setPlayerDataChamp15(r3.data[14]);
-      console.log(r3.data[0]);
+      ////console.log(r3.data[0]);
 
     }).catch(function (error){
       //Error
-      console.log(error);
+      //console.log(error);
     });
 
   }
@@ -136,75 +186,101 @@ function App() {
       //success
 
       setPlayerDataMatch1(r4.data);
-      console.log(r4.data);
+      //console.log(r4.data);
       searchforPlayerMatchid(event,r4.data)
 
     }).catch(function (error){
       //Error
-      console.log(error);
+      //console.log(error);
     });
   }
-
-  function searchforPlayerMatchid(event,idd){
+  const delay = millis => new Promise((resolve, reject) => {
+  setTimeout(_ => resolve(), millis)
+  });
+  var testing= "wrong"
+  async function searchforPlayerMatchid(event,idd){
 
     var APICallStringMatchid1 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[0]+"?api_key="+ API_KEYS;
     var APICallStringMatchid2 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[1]+"?api_key="+ API_KEYS;
-    //var APICallStringMatchid3 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[2]+"?api_key="+ API_KEYS;
-    //var APICallStringMatchid4 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[3]+"?api_key="+ API_KEYS;
-    //var APICallStringMatchid5 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[4]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid3 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[2]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid4 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[3]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid5 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[4]+"?api_key="+ API_KEYS;
 
+    //await delay(2000);
+    console.log('axios request1')
     axios.get(APICallStringMatchid1).then(function (r5){
       //success
 
-      setPlayerDataMatchid(r5.data.metadata);
-      console.log(r5.data.metadata);
-      searchForPlayerfrompuuid(event,r5.data.metadata.participants,1)
+
+      //setPlayerDataMatchid(r5.data.metadata);
+      console.log(r5.data);
+      console.log(r5.data.info.participants[0].championId);
+      testing = "r5.data.info.teams[0].win";
+      //settesti(r5.data.info.teams[0].win)
+
+      //console.log(r5.data.info.participants[0].summonerName);
+      setg1(r5.data);
+      //console.log("hi")
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,1)
 
     }).catch(function (error){
       //Error
-      console.log(error);
+      //console.log(error);
     });
 
+    //await delay(2000);
+    console.log('axios request2')
     axios.get(APICallStringMatchid2).then(function (r5){
       //success
-      searchForPlayerfrompuuid(event,r5.data.metadata.participants,2)
+      setg2(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,2)
 
     }).catch(function (error){
       //Error
-      console.log(error);
+      //console.log(error);
     });
 
-    // axios.get(APICallStringMatchid3).then(function (r5){
-    //   //success
-    //   searchForPlayerfrompuuid(event,r5.data.metadata.participants,3)
-    //
-    // }).catch(function (error){
-    //   //Error
-    //   console.log(error);
-    // });
-    //
-    // axios.get(APICallStringMatchid4).then(function (r5){
-    //   //success
-    //   searchForPlayerfrompuuid(event,r5.data.metadata.participants,4)
-    //
-    // }).catch(function (error){
-    //   //Error
-    //   console.log(error);
-    // });
-    //
-    // axios.get(APICallStringMatchid5).then(function (r5){
-    //   //success
-    //   searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
-    //
-    // }).catch(function (error){
-    //   //Error
-    //   console.log(error);
-    // });
+    //await delay(2000);
+    console.log('axios request3')
+    axios.get(APICallStringMatchid3).then(function (r5){
+      //success
+      setg3(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,3)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    //await delay(2000);
+    console.log('axios request4')
+    axios.get(APICallStringMatchid4).then(function (r5){
+      //success
+      setg4(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,4)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    //await delay(2000);
+    console.log('axios request5')
+    axios.get(APICallStringMatchid5).then(function (r5){
+      //success
+      setg5(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
 
 
   }
 
-  function searchForPlayerfrompuuid(event,idd,game){
+
+  async function searchForPlayerfrompuuid(event,idd,game){
+
+
     var g1p1 = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/"+idd[0]+"?api_key="+API_KEYS;
     var g1p2 = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/"+idd[1]+"?api_key="+API_KEYS;
     var g1p3 = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/"+idd[2]+"?api_key="+API_KEYS;
@@ -217,6 +293,8 @@ function App() {
     var g1p10 = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/"+idd[9]+"?api_key="+API_KEYS;
 
     if (game==1){
+
+
 
 
       axios.all([
@@ -245,101 +323,13 @@ function App() {
 
       });
 
-      // axios.get(g1p1).then(r6=>{
-      //   //success
-      //   setg1p1(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p2).then(function (r7){
-      //   //success
-      //   setg1p2(r7.data);
-      //   console.log(r7.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p3).then(function (r8){
-      //   //success
-      //   setg1p3(r8.data);
-      //   console.log(r8.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p4).then(function (r6){
-      //   //success
-      //   setg1p4(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p5).then(function (r6){
-      //   //success
-      //   setg1p5(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p6).then(function (r6){
-      //   //success
-      //   setg1p6(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p7).then(function (r6){
-      //   //success
-      //   setg1p7(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p8).then(function (r6){
-      //   //success
-      //   setg1p8(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p9).then(function (r6){
-      //   //success
-      //   setg1p9(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p10).then(function (r6){
-      //   //success
-      //   setg1p10(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
+
 
 
     }
 
     else if (game==2){
+
 
 
       axios.all([
@@ -368,102 +358,13 @@ function App() {
 
       });
 
-      // axios.get(g1p1).then(function (r6){
-      //   //success
-      //   setg2p1(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p2).then(function (r7){
-      //   //success
-      //   setg2p2(r7.data);
-      //   console.log(r7.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p3).then(function (r8){
-      //   //success
-      //   setg2p3(r8.data);
-      //   console.log(r8.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p4).then(function (r6){
-      //   //success
-      //   setg2p4(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p5).then(function (r6){
-      //   //success
-      //   setg2p5(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p6).then(function (r6){
-      //   //success
-      //   setg2p6(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p7).then(function (r6){
-      //   //success
-      //   setg2p7(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p8).then(function (r6){
-      //   //success
-      //   setg2p8(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p9).then(function (r6){
-      //   //success
-      //   setg2p9(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p10).then(function (r6){
-      //   //success
-      //   setg2p10(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
 
 
     }
 
 
     else if (game==3){
+
 
 
       axios.all([
@@ -492,96 +393,6 @@ function App() {
 
       });
 
-      // axios.get(g1p1).then(function (r6){
-      //   //success
-      //   setg3p1(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p2).then(function (r7){
-      //   //success
-      //   setg3p2(r7.data);
-      //   console.log(r7.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p3).then(function (r8){
-      //   //success
-      //   setg3p3(r8.data);
-      //   console.log(r8.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p4).then(function (r6){
-      //   //success
-      //   setg3p4(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p5).then(function (r6){
-      //   //success
-      //   setg3p5(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p6).then(function (r6){
-      //   //success
-      //   setg3p6(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p7).then(function (r6){
-      //   //success
-      //   setg3p7(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p8).then(function (r6){
-      //   //success
-      //   setg3p8(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p9).then(function (r6){
-      //   //success
-      //   setg3p9(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p10).then(function (r6){
-      //   //success
-      //   setg3p10(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
 
 
     }
@@ -614,96 +425,6 @@ function App() {
 
       });
 
-      // axios.get(g1p1).then(function (r6){
-      //   //success
-      //   setg4p1(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p2).then(function (r7){
-      //   //success
-      //   setg4p2(r7.data);
-      //   console.log(r7.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p3).then(function (r8){
-      //   //success
-      //   setg4p3(r8.data);
-      //   console.log(r8.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p4).then(function (r6){
-      //   //success
-      //   setg4p4(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p5).then(function (r6){
-      //   //success
-      //   setg4p5(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p6).then(function (r6){
-      //   //success
-      //   setg4p6(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p7).then(function (r6){
-      //   //success
-      //   setg4p7(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p8).then(function (r6){
-      //   //success
-      //   setg4p8(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p9).then(function (r6){
-      //   //success
-      //   setg4p9(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p10).then(function (r6){
-      //   //success
-      //   setg4p10(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
 
 
     }
@@ -735,96 +456,7 @@ function App() {
 
       });
 
-      // axios.get(g1p1).then( rs6=>{
-      //   //success
-      //   setg5p1(rs6.data);
-      //   console.log(rs6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p2).then(function (r7){
-      //   //success
-      //   setg5p2(r7.data);
-      //   console.log(r7.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p3).then(function (r8){
-      //   //success
-      //   setg5p3(r8.data);
-      //   console.log(r8.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p4).then(function (r6){
-      //   //success
-      //   setg5p4(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p5).then(function (r6){
-      //   //success
-      //   setg5p5(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p6).then(function (r6){
-      //   //success
-      //   setg5p6(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p7).then(function (r6){
-      //   //success
-      //   setg5p7(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p8).then(function (r6){
-      //   //success
-      //   setg5p8(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p9).then(function (r6){
-      //   //success
-      //   setg5p9(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
-      // axios.get(g1p10).then(function (r6){
-      //   //success
-      //   setg5p10(r6.data);
-      //   console.log(r6.data);
-      //
-      // }).catch(function (error){
-      //   //Error
-      //   console.log(error);
-      // });
+
 
     }
 
@@ -841,7 +473,7 @@ function App() {
       //success
 
       setPlayerData(response.data);
-      console.log(playerData);
+      //console.log(playerData);
       searchForPlayerRank(event,response.data.id)
       searchForPlayerMatch(event,response.data.puuid)
 
@@ -849,10 +481,87 @@ function App() {
 
     }).catch(function (error){
       //Error
-      console.log(error);
+      //console.log(error);
     });
   }
 
+  function rankimage(idd){
+    var temp = "silver"
+
+    try {
+      temp = idd.tier.toLowerCase()
+    }
+    catch(err) {
+    }
+    return temp
+  }
+
+
+  function didwewin(user,idd){
+
+    var temp = "no";
+    //id.info.teams[0].win"
+    try {
+
+      if (((user==idd.info.participants[0].summonerName)||
+          (user==idd.info.participants[1].summonerName)||
+          (user==idd.info.participants[2].summonerName)||
+          (user==idd.info.participants[3].summonerName)||
+          (user==idd.info.participants[4].summonerName))&&(idd.info.teams[0].win==true)){
+        temp = "yes";
+
+      }
+      if (((user==idd.info.participants[0].summonerName)||
+          (user==idd.info.participants[1].summonerName)||
+          (user==idd.info.participants[2].summonerName)||
+          (user==idd.info.participants[3].summonerName)||
+          (user==idd.info.participants[4].summonerName))&&(idd.info.teams[0].win==false)){
+        temp = "no";
+
+      }
+      else if (((user==idd.info.participants[6].summonerName)||
+          (user==idd.info.participants[7].summonerName)||
+          (user==idd.info.participants[8].summonerName)||
+          (user==idd.info.participants[9].summonerName)||
+          (user==idd.info.participants[10].summonerName))&&(idd.info.teams[1].win==true)){
+        temp = "yes";
+      }
+
+      else if (((user==idd.info.participants[6].summonerName)||
+          (user==idd.info.participants[7].summonerName)||
+          (user==idd.info.participants[8].summonerName)||
+          (user==idd.info.participants[9].summonerName)||
+          (user==idd.info.participants[10].summonerName))&&(idd.info.teams[1].win==false)){
+        temp = "no";
+      }
+    }
+    catch(err) {
+    }
+
+    return temp
+
+
+  }
+
+  function playerchampsel(idd,p) {
+
+    var ret = "http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/Akali.png";
+
+    //"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp.championId)+".png"
+    try{
+      var num =idd.info.participants[p].championId ;
+      ret = "http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(num)+".png"
+
+      console.log("YOO")
+      console.log(num);
+
+    }
+    catch(err){
+
+    }
+    return ret
+
+  }
 
 
 
@@ -860,47 +569,42 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h5>dd </h5>
+        <h1>League Stats</h1>
 
 
-        <input type="text" onChange={e => setSearchText(e.target.value)} ></input>
-        <button onClick={e => searchForPlayer(e)}> search for player </button>
+
+        <input class="leaguename" type="text" onChange={e => setSearchText(e.target.value)} ></input>
+        <button class="leaguebutton" onClick={e => searchForPlayer(e)}> search for player </button>
       </div>
       {JSON.stringify(playerData) != '{}' ?
         <>
-          <div className="content flex text-left">
+          <div className="content flex text-center">
             <img className=" h-48 w-48" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/profileicon/"+playerData.profileIconId+".png"}></img>
-            <p className="text-blue-800">{playerData.name}</p>
+            <div class="profile">
+              <p className="text-blue-800">{playerData.name}</p>
+              <p>lvl {playerData.summonerLevel} </p>
 
 
-
-          </div>
-          <div>
-            <p className="bg-blue-800">{playerData.name}</p>
-
-
-            <p>{playerDataR.tier} {playerDataR.rank}</p>
-
-            <p>{playerDataR.leaguePoints}lp</p>
-
-            <p>{playerDataR.wins}wins</p>
-            <p>{playerDataR.losses}losses</p>
-            <p>{(playerDataR.wins/(playerDataR.wins+playerDataR.losses)).toFixed(2)*100}%</p>
-            <p>{g3p10.name}</p>
-
-
-          </div>
-          <div >
-          <div className="content flex text-left">
-            <img className=" h-48 w-48" src={"https://static.u.gg/assets/lol/s12_rank_icons/"+playerDataR.tier.toLowerCase()+".png"}></img>
-
-            <div>
-              <p>{playerDataR.tier} {playerDataR.rank}</p>
-              <p>{playerDataR.leaguePoints}lp</p>
             </div>
-            <div >
-              <p>{playerDataR.wins}W {playerDataR.losses}L</p>
-              <p>{(playerDataR.wins/(playerDataR.wins+playerDataR.losses)).toFixed(2)*100}% Win Rate</p>
+
+
+
+          </div>
+
+          <div >
+          <div class="rankcontent"   >
+            <img class="rankimg" src={"https://static.u.gg/assets/lol/s12_rank_icons/"+rankimage(playerDataR)+".png"}></img>
+            <div class="textcontainer">
+              <div class="ranktext">
+                <p>{playerDataR.tier} {playerDataR.rank}</p>
+                <p>{playerDataR.leaguePoints}lp</p>
+              </div>
+              <div class="rankwins">
+                <p>{playerDataR.wins}W {playerDataR.losses}L</p>
+                <p>{(playerDataR.wins/(playerDataR.wins+playerDataR.losses)).toFixed(2)*100}% Win Rate</p>
+              </div>
+
+
             </div>
           </div>
 
@@ -908,118 +612,456 @@ function App() {
 
           <div class="float-container">
             <div class="float-child">
+              <p class="hm">Champions</p>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp.championId)+".png"}></img>
-                <p>{playerDataChamp.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp.championId)}</p>
+                <div className=" w-15">
+                  <p class="champsd">{champID_to_Champ(playerDataChamp.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp2.championId)+".png"}></img>
-                <p>{playerDataChamp2.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp2.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp2.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp2.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp3.championId)+".png"}></img>
-                <p>{playerDataChamp3.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp3.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp3.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp3.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp4.championId)+".png"}></img>
-                <p>{playerDataChamp4.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp4.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp4.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp4.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp5.championId)+".png"}></img>
-                <p>{playerDataChamp5.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp5.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp5.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp5.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp6.championId)+".png"}></img>
-                <p>{playerDataChamp6.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp6.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp6.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp6.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp7.championId)+".png"}></img>
-                <p>{playerDataChamp7.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp7.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp7.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp7.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp8.championId)+".png"}></img>
-                <p>{playerDataChamp8.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp8.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp8.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp8.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp9.championId)+".png"}></img>
-                <p>{playerDataChamp9.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp9.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp9.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp9.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp10.championId)+".png"}></img>
-                <p>{playerDataChamp10.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp10.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp10.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp10.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp11.championId)+".png"}></img>
-                <p>{playerDataChamp11.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp11.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp11.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp11.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp12.championId)+".png"}></img>
-                <p>{playerDataChamp12.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp12.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp12.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp12.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp13.championId)+".png"}></img>
-                <p>{playerDataChamp13.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp13.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp13.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp13.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp14.championId)+".png"}></img>
-                <p>{playerDataChamp14.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp14.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp14.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp14.championPoints} pts  </p>
+                </div>
               </div>
               <div className="content flex">
                 <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp15.championId)+".png"}></img>
-                <p>{playerDataChamp15.championPoints}  </p>
-                <p>{champID_to_Champ(playerDataChamp15.championId)}</p>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp15.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp15.championPoints} pts  </p>
+                </div>
               </div>
 
             </div>
 
             <div class="float-child2" >
-              <p>Match history</p>
+              <p class="">Match history</p>
 
-
-              <div class="float-child3">
-                <p>{g1p1.name}</p>
-                <p>{g1p2.name}</p>
-                <p>{g1p3.name}</p>
-                <p>{g1p4.name}</p>
-                <p>{g1p5.name}</p>
+              <div class={didwewin(playerData.name,g1)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g1,0)}></img>
+                    <p class="t1" >{findplayer(g1,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g1,1)}></img>
+                    <p class="t1" >{findplayer(g1,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g1,2)}></img>
+                    <p class="t1" >{findplayer(g1,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g1,3)}></img>
+                    <p class="t1" >{findplayer(g1,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g1,4)}></img>
+                    <p class="t1" >{findplayer(g1,4)}</p>
+                  </div>
+                </div>
               </div>
 
-              <div class="float-child3">
-                <p>{g1p6.name}</p>
-                <p>{g1p7.name}</p>
-                <p>{g1p8.name}</p>
-                <p>{g1p9.name}</p>
-                <p>{g1p10.name}</p>
-              </div>
-              <div class="float-child3">
-                <p>{g2p1.name}</p>
-                <p>{g2p2.name}</p>
-                <p>{g2p3.name}</p>
-                <p>{g2p4.name}</p>
-                <p>{g2p5.name}</p>
+              <div class={didwewin(playerData.name,g1)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g1,5)}></img>
+                    <p class="t1" >{findplayer(g1,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g1,6)}></img>
+                    <p class="t1" >{findplayer(g1,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g1,7)}></img>
+                    <p class="t1" >{findplayer(g1,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g1,8)}></img>
+                    <p class="t1" >{findplayer(g1,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g1,9)}></img>
+                    <p class="t1" >{findplayer(g1,9)}</p>
+                  </div>
+                </div>
               </div>
 
-              <div class="float-child3">
-                <p>{g2p6.name}</p>
-                <p>{g2p7.name}</p>
-                <p>{g2p8.name}</p>
-                <p>{g2p9.name}</p>
-                <p>{g2p10.name}</p>
+              <div class={didwewin(playerData.name,g2)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g2,0)}></img>
+                    <p class="t1" >{findplayer(g2,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g2,1)}></img>
+                    <p class="t1" >{findplayer(g2,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g2,2)}></img>
+                    <p class="t1" >{findplayer(g2,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g2,3)}></img>
+                    <p class="t1" >{findplayer(g2,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g2,4)}></img>
+                    <p class="t1" >{findplayer(g2,4)}</p>
+                  </div>
+                </div>
               </div>
+
+              <div class={didwewin(playerData.name,g2)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g2,5)}></img>
+                    <p class="t1" >{findplayer(g2,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g2,6)}></img>
+                    <p class="t1" >{findplayer(g2,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g2,7)}></img>
+                    <p class="t1" >{findplayer(g2,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g2,8)}></img>
+                    <p class="t1" >{findplayer(g2,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g2,9)}></img>
+                    <p class="t1" >{findplayer(g2,9)}</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class={didwewin(playerData.name,g3)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g3,0)}></img>
+                    <p class="t1" >{findplayer(g3,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g3,1)}></img>
+                    <p class="t1" >{findplayer(g3,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g3,2)}></img>
+                    <p class="t1" >{findplayer(g3,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g3,3)}></img>
+                    <p class="t1" >{findplayer(g3,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g3,4)}></img>
+                    <p class="t1" >{findplayer(g3,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g3)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g3,5)}></img>
+                    <p class="t1" >{findplayer(g3,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g3,6)}></img>
+                    <p class="t1" >{findplayer(g3,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g3,7)}></img>
+                    <p class="t1" >{findplayer(g3,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g3,8)}></img>
+                    <p class="t1" >{findplayer(g3,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g3,9)}></img>
+                    <p class="t1" >{findplayer(g3,9)}</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class={didwewin(playerData.name,g4)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g4,0)}></img>
+                    <p class="t1" >{findplayer(g4,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g4,1)}></img>
+                    <p class="t1" >{findplayer(g4,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g4,2)}></img>
+                    <p class="t1" >{findplayer(g4,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g4,3)}></img>
+                    <p class="t1" >{findplayer(g4,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g4,4)}></img>
+                    <p class="t1" >{findplayer(g4,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g4)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g4,5)}></img>
+                    <p class="t1" >{findplayer(g4,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g4,6)}></img>
+                    <p class="t1" >{findplayer(g4,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g4,7)}></img>
+                    <p class="t1" >{findplayer(g4,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g4,8)}></img>
+                    <p class="t1" >{findplayer(g4,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g4,9)}></img>
+                    <p class="t1" >{findplayer(g4,9)}</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class={didwewin(playerData.name,g5)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g5,0)}></img>
+                    <p class="t1" >{findplayer(g5,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g5,1)}></img>
+                    <p class="t1" >{findplayer(g5,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g5,2)}></img>
+                    <p class="t1" >{findplayer(g5,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g5,3)}></img>
+                    <p class="t1" >{findplayer(g5,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g5,4)}></img>
+                    <p class="t1" >{findplayer(g5,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g5)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g5,5)}></img>
+                    <p class="t1" >{findplayer(g5,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g5,6)}></img>
+                    <p class="t1" >{findplayer(g5,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g5,7)}></img>
+                    <p class="t1" >{findplayer(g5,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g5,8)}></img>
+                    <p class="t1" >{findplayer(g5,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g5,9)}></img>
+                    <p class="t1" >{findplayer(g5,9)}</p>
+                  </div>
+                </div>
+              </div>
+
 
 
 
@@ -1032,7 +1074,7 @@ function App() {
 
         </>
         :
-        <>  <p>NO DATA</p>  </>
+        <>    </>
 
       }
 

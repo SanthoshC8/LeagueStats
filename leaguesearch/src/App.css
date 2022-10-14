@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@media (prefers-blackuced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
@@ -44,34 +44,139 @@
 
 .float-child {
     width: 20%;
+
     float: left;
 
-    border: 2px solid red;
+    border: 2px solid black;
 }
 .float-child2 {
     width: 80%;
-    float: left;
+    float: right;
 
-    border: 2px solid red;
+    border: 2px solid black;
 }
 
 
 .float-child3 {
+
+
     width: 50%;
     float: left;
-    border: 2px solid red;
+    border: 1px solid black;
 }
 
 
 .float-child5 {
     width: 50%;
     float: left;
-    border: 2px solid red;
+    border: 1px solid black;
 }
 
 .lp {
-  
+
   float: left;
-  border: 2px solid red;
+  border: 1px solid black;
   clear: both;
+}
+.hm{
+  border: 1px solid black;
+}
+
+.textcontainer {
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ranktext {
+  display: flex;
+  justify-items: flex-start;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 500;
+
+
+}
+
+.rankwins {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-items: center;
+  font-size: 12px;
+}
+
+.rankcontent{
+  width: 16%;
+  display: block;
+  flex-direction: column;
+  padding: 18px;
+  border-radius: 3px;
+
+
+}
+
+.profile {
+  flex-direction: column;
+}
+
+p.champsd {
+  font-size: 18px;
+  text-align: center
+
+
+}
+.leaguename{
+  border: 2px solid black;
+
+}
+.leaguebutton{
+  border: 2px solid black;
+}
+
+.game1{
+
+  background-color: green;
+}
+
+.black {color:black}
+.orange {color:orange}
+.green {color:green}
+
+
+.yes {
+
+  width: 50%;
+  float: left;
+  border: 1px solid black;
+  background-color: #1e2b5e;
+}
+
+.no {
+
+  width: 50%;
+  float: left;
+  border: 1px solid black;
+  background-color: #5A343B;
+}
+.t2{
+  padding-left: 10%;
+  padding-right: 10%;
+
+  align-items: center;
+  display: flex;
+  text-align:center;
+}
+
+.t3{
+  display: flex;
+  align-items: center;
+
+}
+.champimage{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  text-align: center;
 }
