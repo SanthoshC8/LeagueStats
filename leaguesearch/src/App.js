@@ -24,6 +24,18 @@ function App() {
   const [playerDataChamp13, setPlayerDataChamp13] = useState({});
   const [playerDataChamp14, setPlayerDataChamp14] = useState({});
   const [playerDataChamp15, setPlayerDataChamp15] = useState({});
+  const [playerDataChamp16, setPlayerDataChamp16] = useState({});
+  const [playerDataChamp17, setPlayerDataChamp17] = useState({});
+  const [playerDataChamp18, setPlayerDataChamp18] = useState({});
+  const [playerDataChamp19, setPlayerDataChamp19] = useState({});
+  const [playerDataChamp20, setPlayerDataChamp20] = useState({});
+  const [playerDataChamp21, setPlayerDataChamp21] = useState({});
+  const [playerDataChamp22, setPlayerDataChamp22] = useState({});
+  const [playerDataChamp23, setPlayerDataChamp23] = useState({});
+  const [playerDataChamp24, setPlayerDataChamp24] = useState({});
+  const [playerDataChamp25, setPlayerDataChamp25] = useState({});
+
+
   const [playerDataMatch1, setPlayerDataMatch1] = useState({});
   const [playerDataMatchid, setPlayerDataMatchid] = useState({});
   const [g1p1, setg1p1] = useState({});
@@ -97,16 +109,14 @@ function App() {
   const [g13, setg13] = useState({});
   const [g14, setg14] = useState({});
   const [g15, setg15] = useState({});
+  const [g16, setg16] = useState({});
+  const [g17, setg17] = useState({});
+  const [g18, setg18] = useState({});
+  const [g19, setg19] = useState({});
+  const [g20, setg20] = useState({});
 
 
 
-
-
-  //var g1player1 = "HELOO";
-  //var g1player2 = "HELOO2";
-  //var g1player3 = "HELOO3";
-  //var g1player4 = "HELOO4";
-  //var g1player5 = "HELOO5";
 
   function findplayer(idd,pn){
     var player = "player";
@@ -154,7 +164,7 @@ function App() {
 
     axios.get(APICallStringChamp).then(function (r3){
       //success
-
+      console.log(r3.data);
       setPlayerDataChamp(r3.data[0]);
       setPlayerDataChamp2(r3.data[1]);
       setPlayerDataChamp3(r3.data[2]);
@@ -170,6 +180,16 @@ function App() {
       setPlayerDataChamp13(r3.data[12]);
       setPlayerDataChamp14(r3.data[13]);
       setPlayerDataChamp15(r3.data[14]);
+      setPlayerDataChamp16(r3.data[15]);
+      setPlayerDataChamp17(r3.data[16]);
+      setPlayerDataChamp18(r3.data[17]);
+      setPlayerDataChamp19(r3.data[18]);
+      setPlayerDataChamp20(r3.data[19]);
+      setPlayerDataChamp21(r3.data[20]);
+      setPlayerDataChamp22(r3.data[21]);
+      setPlayerDataChamp23(r3.data[22]);
+      setPlayerDataChamp24(r3.data[23]);
+      setPlayerDataChamp25(r3.data[24]);
       ////console.log(r3.data[0]);
 
     }).catch(function (error){
@@ -205,6 +225,21 @@ function App() {
     var APICallStringMatchid3 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[2]+"?api_key="+ API_KEYS;
     var APICallStringMatchid4 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[3]+"?api_key="+ API_KEYS;
     var APICallStringMatchid5 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[4]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid6 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[5]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid7 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[6]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid8 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[7]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid9 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[8]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid10 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[9]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid11 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[10]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid12 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[11]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid13 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[12]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid14 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[13]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid15 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[14]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid16 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[15]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid17 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[16]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid18 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[17]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid19 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[18]+"?api_key="+ API_KEYS;
+    var APICallStringMatchid20 ="https://americas.api.riotgames.com/lol/match/v5/matches/"+idd[19]+"?api_key="+ API_KEYS;
 
     //await delay(2000);
     console.log('axios request1')
@@ -267,6 +302,170 @@ function App() {
     axios.get(APICallStringMatchid5).then(function (r5){
       //success
       setg5(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    //await delay(2000);
+    console.log('axios request6')
+    axios.get(APICallStringMatchid6).then(function (r5){
+      //success
+      setg6(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,2)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+
+    //await delay(2000);
+    console.log('axios request7')
+    axios.get(APICallStringMatchid7).then(function (r5){
+      //success
+      setg7(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,3)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    //await delay(2000);
+    console.log('axios request8')
+    axios.get(APICallStringMatchid8).then(function (r5){
+      //success
+      setg8(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,4)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    //await delay(2000);
+    console.log('axios request9')
+    axios.get(APICallStringMatchid9).then(function (r5){
+      //success
+      setg9(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+
+    //await delay(2000);
+    console.log('axios request10')
+    axios.get(APICallStringMatchid10).then(function (r5){
+      //success
+      setg10(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,3)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    //await delay(2000);
+    console.log('axios request11')
+    axios.get(APICallStringMatchid11).then(function (r5){
+      //success
+      setg11(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,4)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    //await delay(2000);
+    console.log('axios request12')
+    axios.get(APICallStringMatchid12).then(function (r5){
+      //success
+      setg12(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    //await delay(2000);
+    console.log('axios request13')
+    axios.get(APICallStringMatchid13).then(function (r5){
+      //success
+      setg13(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,2)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+
+    //await delay(2000);
+    console.log('axios request14')
+    axios.get(APICallStringMatchid14).then(function (r5){
+      //success
+      setg14(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,3)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    //await delay(2000);
+    console.log('axios request15')
+    axios.get(APICallStringMatchid15).then(function (r5){
+      //success
+      setg15(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,4)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    //await delay(2000);
+    console.log('axios request16')
+    axios.get(APICallStringMatchid16).then(function (r5){
+      //success
+      setg16(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    console.log('axios request17')
+    axios.get(APICallStringMatchid17).then(function (r5){
+      //success
+      setg17(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    console.log('axios request18')
+    axios.get(APICallStringMatchid18).then(function (r5){
+      //success
+      setg18(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    console.log('axios request19')
+    axios.get(APICallStringMatchid19).then(function (r5){
+      //success
+      setg19(r5.data);
+      //searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
+
+    }).catch(function (error){
+      //Error
+      //console.log(error);
+    });
+    console.log('axios request20')
+    axios.get(APICallStringMatchid20).then(function (r5){
+      //success
+      setg20(r5.data);
       //searchForPlayerfrompuuid(event,r5.data.metadata.participants,5)
 
     }).catch(function (error){
@@ -552,8 +751,7 @@ function App() {
       var num =idd.info.participants[p].championId ;
       ret = "http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(num)+".png"
 
-      console.log("YOO")
-      console.log(num);
+
 
     }
     catch(err){
@@ -718,7 +916,76 @@ function App() {
                   <p style={{color: "grey"}}>{playerDataChamp15.championPoints} pts  </p>
                 </div>
               </div>
-
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp16.championId)+".png"}></img>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp16.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp16.championPoints} pts  </p>
+                </div>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp17.championId)+".png"}></img>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp17.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp17.championPoints} pts  </p>
+                </div>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp18.championId)+".png"}></img>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp18.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp18.championPoints} pts  </p>
+                </div>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp19.championId)+".png"}></img>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp19.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp19.championPoints} pts  </p>
+                </div>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp20.championId)+".png"}></img>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp20.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp20.championPoints} pts  </p>
+                </div>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp21.championId)+".png"}></img>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp21.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp21.championPoints} pts  </p>
+                </div>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp22.championId)+".png"}></img>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp22.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp22.championPoints} pts  </p>
+                </div>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp23.championId)+".png"}></img>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp23.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp23.championPoints} pts  </p>
+                </div>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp24.championId)+".png"}></img>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp24.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp24.championPoints} pts  </p>
+                </div>
+              </div>
+              <div className="content flex">
+                <img className=" h-20 w-20" src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/"+champID_to_Champ(playerDataChamp25.championId)+".png"}></img>
+                <div>
+                  <p class="champsd">{champID_to_Champ(playerDataChamp25.championId)}</p>
+                  <p style={{color: "grey"}}>{playerDataChamp25.championPoints} pts  </p>
+                </div>
+              </div>
             </div>
 
             <div class="float-child2" >
@@ -992,10 +1259,6 @@ function App() {
                 </div>
               </div>
 
-
-
-
-
               <div class={didwewin(playerData.name,g5)}>
                 <div class="t2">
                   <div class="t3">
@@ -1061,14 +1324,999 @@ function App() {
                   </div>
                 </div>
               </div>
+              <div class={didwewin(playerData.name,g6)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g6,0)}></img>
+                    <p class="t1" >{findplayer(g6,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g6,1)}></img>
+                    <p class="t1" >{findplayer(g6,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g6,2)}></img>
+                    <p class="t1" >{findplayer(g6,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g6,3)}></img>
+                    <p class="t1" >{findplayer(g6,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g6,4)}></img>
+                    <p class="t1" >{findplayer(g6,4)}</p>
+                  </div>
+                </div>
+              </div>
 
+              <div class={didwewin(playerData.name,g6)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g6,5)}></img>
+                    <p class="t1" >{findplayer(g6,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g6,6)}></img>
+                    <p class="t1" >{findplayer(g6,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g6,7)}></img>
+                    <p class="t1" >{findplayer(g6,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g6,8)}></img>
+                    <p class="t1" >{findplayer(g6,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g6,9)}></img>
+                    <p class="t1" >{findplayer(g6,9)}</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class={didwewin(playerData.name,g7)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g7,0)}></img>
+                    <p class="t1" >{findplayer(g7,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g7,1)}></img>
+                    <p class="t1" >{findplayer(g7,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g7,2)}></img>
+                    <p class="t1" >{findplayer(g7,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g7,3)}></img>
+                    <p class="t1" >{findplayer(g7,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g7,4)}></img>
+                    <p class="t1" >{findplayer(g7,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g7)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g7,5)}></img>
+                    <p class="t1" >{findplayer(g7,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g7,6)}></img>
+                    <p class="t1" >{findplayer(g7,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g7,7)}></img>
+                    <p class="t1" >{findplayer(g7,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g7,8)}></img>
+                    <p class="t1" >{findplayer(g7,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g7,9)}></img>
+                    <p class="t1" >{findplayer(g7,9)}</p>
+                  </div>
+                </div>
+              </div>
+              <div class={didwewin(playerData.name,g8)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g8,0)}></img>
+                    <p class="t1" >{findplayer(g8,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g8,1)}></img>
+                    <p class="t1" >{findplayer(g8,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g8,2)}></img>
+                    <p class="t1" >{findplayer(g8,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g8,3)}></img>
+                    <p class="t1" >{findplayer(g8,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g8,4)}></img>
+                    <p class="t1" >{findplayer(g8,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g8)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g8,5)}></img>
+                    <p class="t1" >{findplayer(g8,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g8,6)}></img>
+                    <p class="t1" >{findplayer(g8,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g8,7)}></img>
+                    <p class="t1" >{findplayer(g8,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g8,8)}></img>
+                    <p class="t1" >{findplayer(g8,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g8,9)}></img>
+                    <p class="t1" >{findplayer(g8,9)}</p>
+                  </div>
+                </div>
+              </div>
+              <div class={didwewin(playerData.name,g9)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g9,0)}></img>
+                    <p class="t1" >{findplayer(g9,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g9,1)}></img>
+                    <p class="t1" >{findplayer(g9,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g9,2)}></img>
+                    <p class="t1" >{findplayer(g9,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g9,3)}></img>
+                    <p class="t1" >{findplayer(g9,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g9,4)}></img>
+                    <p class="t1" >{findplayer(g9,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g9)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g9,5)}></img>
+                    <p class="t1" >{findplayer(g9,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g9,6)}></img>
+                    <p class="t1" >{findplayer(g9,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g9,7)}></img>
+                    <p class="t1" >{findplayer(g9,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g9,8)}></img>
+                    <p class="t1" >{findplayer(g9,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g9,9)}></img>
+                    <p class="t1" >{findplayer(g9,9)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g10)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g10,0)}></img>
+                    <p class="t1" >{findplayer(g10,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g10,1)}></img>
+                    <p class="t1" >{findplayer(g10,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g10,2)}></img>
+                    <p class="t1" >{findplayer(g10,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g10,3)}></img>
+                    <p class="t1" >{findplayer(g10,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g10,4)}></img>
+                    <p class="t1" >{findplayer(g10,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g10)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g10,5)}></img>
+                    <p class="t1" >{findplayer(g10,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g10,6)}></img>
+                    <p class="t1" >{findplayer(g10,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g10,7)}></img>
+                    <p class="t1" >{findplayer(g10,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g10,8)}></img>
+                    <p class="t1" >{findplayer(g10,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g10,9)}></img>
+                    <p class="t1" >{findplayer(g10,9)}</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class={didwewin(playerData.name,g11)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g11,0)}></img>
+                    <p class="t1" >{findplayer(g11,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g11,1)}></img>
+                    <p class="t1" >{findplayer(g11,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g11,2)}></img>
+                    <p class="t1" >{findplayer(g11,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g11,3)}></img>
+                    <p class="t1" >{findplayer(g11,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g11,4)}></img>
+                    <p class="t1" >{findplayer(g11,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g11)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g11,5)}></img>
+                    <p class="t1" >{findplayer(g11,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g11,6)}></img>
+                    <p class="t1" >{findplayer(g11,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g11,7)}></img>
+                    <p class="t1" >{findplayer(g11,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g11,8)}></img>
+                    <p class="t1" >{findplayer(g11,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g11,9)}></img>
+                    <p class="t1" >{findplayer(g11,9)}</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class={didwewin(playerData.name,g12)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g12,0)}></img>
+                    <p class="t1" >{findplayer(g12,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g12,1)}></img>
+                    <p class="t1" >{findplayer(g12,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g12,2)}></img>
+                    <p class="t1" >{findplayer(g12,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g12,3)}></img>
+                    <p class="t1" >{findplayer(g12,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g12,4)}></img>
+                    <p class="t1" >{findplayer(g12,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g12)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g12,5)}></img>
+                    <p class="t1" >{findplayer(g12,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g12,6)}></img>
+                    <p class="t1" >{findplayer(g12,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g12,7)}></img>
+                    <p class="t1" >{findplayer(g12,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g12,8)}></img>
+                    <p class="t1" >{findplayer(g12,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g12,9)}></img>
+                    <p class="t1" >{findplayer(g12,9)}</p>
+                  </div>
+                </div>
+              </div>
+              <div class={didwewin(playerData.name,g13)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g13,0)}></img>
+                    <p class="t1" >{findplayer(g13,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g13,1)}></img>
+                    <p class="t1" >{findplayer(g13,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g13,2)}></img>
+                    <p class="t1" >{findplayer(g13,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g13,3)}></img>
+                    <p class="t1" >{findplayer(g13,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g13,4)}></img>
+                    <p class="t1" >{findplayer(g13,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g13)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g13,5)}></img>
+                    <p class="t1" >{findplayer(g13,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g13,6)}></img>
+                    <p class="t1" >{findplayer(g13,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g13,7)}></img>
+                    <p class="t1" >{findplayer(g13,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g13,8)}></img>
+                    <p class="t1" >{findplayer(g13,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g13,9)}></img>
+                    <p class="t1" >{findplayer(g13,9)}</p>
+                  </div>
+                </div>
+              </div>
+              <div class={didwewin(playerData.name,g14)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g14,0)}></img>
+                    <p class="t1" >{findplayer(g14,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g14,1)}></img>
+                    <p class="t1" >{findplayer(g14,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g14,2)}></img>
+                    <p class="t1" >{findplayer(g14,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g14,3)}></img>
+                    <p class="t1" >{findplayer(g14,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g14,4)}></img>
+                    <p class="t1" >{findplayer(g14,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g14)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g14,5)}></img>
+                    <p class="t1" >{findplayer(g14,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g14,6)}></img>
+                    <p class="t1" >{findplayer(g14,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g14,7)}></img>
+                    <p class="t1" >{findplayer(g14,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g14,8)}></img>
+                    <p class="t1" >{findplayer(g14,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g14,9)}></img>
+                    <p class="t1" >{findplayer(g14,9)}</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class={didwewin(playerData.name,g15)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g15,0)}></img>
+                    <p class="t1" >{findplayer(g15,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g15,1)}></img>
+                    <p class="t1" >{findplayer(g15,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g15,2)}></img>
+                    <p class="t1" >{findplayer(g15,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g15,3)}></img>
+                    <p class="t1" >{findplayer(g15,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g15,4)}></img>
+                    <p class="t1" >{findplayer(g15,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g15)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g15,5)}></img>
+                    <p class="t1" >{findplayer(g15,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g15,6)}></img>
+                    <p class="t1" >{findplayer(g15,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g15,7)}></img>
+                    <p class="t1" >{findplayer(g15,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g15,8)}></img>
+                    <p class="t1" >{findplayer(g15,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g15,9)}></img>
+                    <p class="t1" >{findplayer(g15,9)}</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class={didwewin(playerData.name,g16)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g16,0)}></img>
+                    <p class="t1" >{findplayer(g16,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g16,1)}></img>
+                    <p class="t1" >{findplayer(g16,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g16,2)}></img>
+                    <p class="t1" >{findplayer(g16,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g16,3)}></img>
+                    <p class="t1" >{findplayer(g16,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g16,4)}></img>
+                    <p class="t1" >{findplayer(g16,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g16)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g16,5)}></img>
+                    <p class="t1" >{findplayer(g16,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g16,6)}></img>
+                    <p class="t1" >{findplayer(g16,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g16,7)}></img>
+                    <p class="t1" >{findplayer(g16,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g16,8)}></img>
+                    <p class="t1" >{findplayer(g16,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g16,9)}></img>
+                    <p class="t1" >{findplayer(g16,9)}</p>
+                  </div>
+                </div>
+              </div>
+              <div class={didwewin(playerData.name,g17)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g17,0)}></img>
+                    <p class="t1" >{findplayer(g17,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g17,1)}></img>
+                    <p class="t1" >{findplayer(g17,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g17,2)}></img>
+                    <p class="t1" >{findplayer(g17,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g17,3)}></img>
+                    <p class="t1" >{findplayer(g17,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g17,4)}></img>
+                    <p class="t1" >{findplayer(g17,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g17)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g17,5)}></img>
+                    <p class="t1" >{findplayer(g17,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g17,6)}></img>
+                    <p class="t1" >{findplayer(g17,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g17,7)}></img>
+                    <p class="t1" >{findplayer(g17,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g17,8)}></img>
+                    <p class="t1" >{findplayer(g17,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g17,9)}></img>
+                    <p class="t1" >{findplayer(g17,9)}</p>
+                  </div>
+                </div>
+              </div>
+              <div class={didwewin(playerData.name,g18)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g18,0)}></img>
+                    <p class="t1" >{findplayer(g18,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g18,1)}></img>
+                    <p class="t1" >{findplayer(g18,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g18,2)}></img>
+                    <p class="t1" >{findplayer(g18,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g18,3)}></img>
+                    <p class="t1" >{findplayer(g18,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g18,4)}></img>
+                    <p class="t1" >{findplayer(g18,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g18)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g18,5)}></img>
+                    <p class="t1" >{findplayer(g18,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g18,6)}></img>
+                    <p class="t1" >{findplayer(g18,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g18,7)}></img>
+                    <p class="t1" >{findplayer(g18,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g18,8)}></img>
+                    <p class="t1" >{findplayer(g18,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g18,9)}></img>
+                    <p class="t1" >{findplayer(g18,9)}</p>
+                  </div>
+                </div>
+              </div>
+              <div class={didwewin(playerData.name,g19)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g19,0)}></img>
+                    <p class="t1" >{findplayer(g19,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g19,1)}></img>
+                    <p class="t1" >{findplayer(g19,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g19,2)}></img>
+                    <p class="t1" >{findplayer(g19,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g19,3)}></img>
+                    <p class="t1" >{findplayer(g19,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g19,4)}></img>
+                    <p class="t1" >{findplayer(g19,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g19)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g19,5)}></img>
+                    <p class="t1" >{findplayer(g19,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g19,6)}></img>
+                    <p class="t1" >{findplayer(g19,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g19,7)}></img>
+                    <p class="t1" >{findplayer(g19,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g19,8)}></img>
+                    <p class="t1" >{findplayer(g19,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g19,9)}></img>
+                    <p class="t1" >{findplayer(g19,9)}</p>
+                  </div>
+                </div>
+              </div>
+              <div class={didwewin(playerData.name,g20)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g20,0)}></img>
+                    <p class="t1" >{findplayer(g20,0)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g20,1)}></img>
+                    <p class="t1" >{findplayer(g20,1)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g20,2)}></img>
+                    <p class="t1" >{findplayer(g20,2)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g20,3)}></img>
+                    <p class="t1" >{findplayer(g20,3)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g20,4)}></img>
+                    <p class="t1" >{findplayer(g20,4)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class={didwewin(playerData.name,g20)}>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g20,5)}></img>
+                    <p class="t1" >{findplayer(g20,5)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g20,6)}></img>
+                    <p class="t1" >{findplayer(g20,6)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g20,7)}></img>
+                    <p class="t1" >{findplayer(g20,7)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g20,8)}></img>
+                    <p class="t1" >{findplayer(g20,8)}</p>
+                  </div>
+                </div>
+                <div class="t2">
+                  <div class="t3">
+                    <img class="champimage" src={playerchampsel(g20,9)}></img>
+                    <p class="t1" >{findplayer(g20,9)}</p>
+                  </div>
+                </div>
+              </div>
 
 
 
             </div>
-
-
-
           </div>
 
 
@@ -1126,6 +2374,8 @@ export default App;
 '268': 'Azir',
 
 '432': 'Bard',
+
+'200': "Bel'Veth",
 
 '53': 'Blitzcrank',
 
@@ -1269,6 +2519,8 @@ export default App;
 
 '76': 'Nidalee',
 
+'895': 'Nilah',
+
 '56': 'Nocturne',
 
 '20': 'Nunu',
@@ -1296,6 +2548,8 @@ export default App;
 '421': 'RekSai',
 
 '526': 'Rell',
+
+'888': 'Renata',
 
 '58': 'Renekton',
 
@@ -1375,6 +2629,8 @@ export default App;
 
 '161': 'Velkoz',
 
+'711': 'Vex',
+
 '254': 'Vi',
 
 '234': 'Viego',
@@ -1404,6 +2660,8 @@ export default App;
 '154': 'Zac',
 
 '238': 'Zed',
+
+'221': 'Zeri',
 
 '115': 'Ziggs',
 
