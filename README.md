@@ -1,1 +1,1 @@
-# LeagueofLegendsStats
+# LeagueStats
